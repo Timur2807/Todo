@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Создать</title>
+  <link type="text/css" rel="stylesheet" href="{% static 'todo/css/base.css' %}">
+</head>
+<body>
+<h1>Создай задачу</h1>
+ {% if user.is_authenticated %}
+    <h3>Вы зашли под именем {{ user.username }}</h3>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Создать</button>
+      <a href="{% url 'current_todo' %}">Назад к задачам</a>
+    </form>
+  {% else %}
+    <h3>
+      Пожалуйста <a href="{% url 'login_user' %}">Войдите</a> или
+      <a href="{% url 'signupuser' %}">Зарегистрируйтесь</a>
+    </h3>
+  {% endif %}
+{{ error }}
+
+</body>
+</html>

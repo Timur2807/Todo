@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'todo/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'todo/css/signupuser.css' %}">
+
+
+</head>
+<body>
+  <h1> Добро пожаловать</h1>
+
+
+  <form class="form" action=""  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form__wrap">
+        <button class="button" type="submit">Зарегистрироваться</button>
+        <a href="{% url 'login_user' %}"> Войти</a>
+    </div>
+    <h3>{{ error }}</h3>
+  </form>
+</body>
+</html>

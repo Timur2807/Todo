@@ -1,0 +1,38 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'todo/css/base.css' %}">
+    </head>
+{% endblock %}
+<body>
+<header>
+  {% block header %}
+    <a href="{% url 'welcome' %}">Главная</a>
+  {% endblock %}
+    <div class="header__container">
+        {% if user.is_authenticated %}
+            <p>Вы зашли под именем: {{ user.username }}</p>
+            <form action="{% url 'logout_user' %}"  method="post">
+            {% csrf_token %}
+            <button type="submit">Выйти</button>
+        {% else %}
+            <a href="{% url 'login_user' %}">Войти</a>
+            <a href="{% url 'signupuser' %}">Зарегистрироваться</a>
+
+        {% endif %}
+        </form>
+    </div>
+</header>
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

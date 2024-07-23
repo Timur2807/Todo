@@ -1,0 +1,11 @@
+{% extends 'todo/base.html' %}
+{% load static %}
+{% block head %}
+  <title>Home</title>
+  <link type="text/css" rel="stylesheet" href="{% static 'todo/css/base.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1 style="text-align: center;color: green;margin-top:10px">Ежедневник</h1>
+  <a href="{% url 'current_todo' %}">Задачи</a>
+{% endblock %}

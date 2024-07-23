@@ -1,0 +1,32 @@
+
+button {
+    font-family: Open Sans, Arial;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    background: #6C5FBC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    color: #FFFFFF;
+    padding: 5px 0px;
+}
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+form input {
+    margin-bottom: 15px;
+    border:2px solid #6C5FBC;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+h3 {
+    text-align: left;
+    color: red;
+}

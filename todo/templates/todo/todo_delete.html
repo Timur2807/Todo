@@ -1,0 +1,9 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+  <h2>Уверены удалить задание?</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+  </form>
+  <a href="{% url 'current_todo' %}">Назад к спискам задач</a>
+{% endblock %}

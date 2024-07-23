@@ -1,0 +1,19 @@
+{% extends 'todo/base.html'%}
+{% block content %}
+  {{ todo.title }}
+  {{ todo.memo }}
+  <br>
+  <br>
+  <br>
+  <div>
+    <form action="" method="post">
+      {% csrf_token %}
+      <button type="submit">Завершить</button>
+    </form>
+    <form action="{% url 'todo_delete' pk=todo.pk %}" method="get">
+      {% csrf_token %}
+      <button type="submit">Удалить</button>
+    </form>
+  </div>
+  <a href="{% url 'current_todo' %}">Назад</a>
+{% endblock %}

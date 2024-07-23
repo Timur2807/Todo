@@ -1,0 +1,20 @@
+{% extends 'todo/base.html' %}
+{% load static %}
+{% block head %}
+  <title>Авторизация</title>
+  <link type="text/css" rel="stylesheet" href="{% static 'todo/css/base.css' %}">
+{% endblock %}
+
+
+{% block content %}
+  <h1>Страница авторизации</h1>
+  <form action="", method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+    <br>
+    <br>
+    <br>
+  <button type="submit">Войти</button>
+  <h3>{{ error }}</h3>
+  </form>
+{% endblock %}

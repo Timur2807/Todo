@@ -1,0 +1,12 @@
+{% extends 'todo/base.html' %}
+{% load static %}
+{% block head %}
+  <title>Гостевая</title>
+  <link type="text/css" rel="stylesheet" href="{% static 'todo/css/base.css' %}">
+{% endblock %}
+{% block header %}
+  <a href="{% url 'current_todo' %}">Задачи</a>
+{% endblock %}
+{% block content %}
+  <h1 >Привет {{ user.username }}</h1>
+{% endblock %}
