@@ -60,6 +60,13 @@ h1 {
     margin-bottom: 2rem;
     color: #6C5FBC;
 }
+
+h2 {
+    text-align: center;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    color: #6C5FBC;
+}
+
 h3 {
     text-align: center;
     color: #6C5FBC;

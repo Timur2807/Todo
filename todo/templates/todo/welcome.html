@@ -8,5 +8,11 @@
   <a href="{% url 'current_todo' %}">Задачи</a>
 {% endblock %}
 {% block content %}
-  <h1 >Привет {{ user.username }}</h1>
+  {% if user.is_authenticated %}
+    <h1 >Привет {{ user.username }}</h1>
+  {% else %}
+    <h1>Привет</h1>
+    <h2>Авторизуйтесь пожалуйста для просмотра задач.</h2>
+  {% endif %}
+
 {% endblock %}

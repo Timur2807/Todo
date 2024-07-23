@@ -37,7 +37,7 @@ def welcome(request):
 def logout_user(request):
     if request.method == "POST":
         logout(request)
-        return redirect('home')
+        return redirect('welcome')
 
 def home(request):
     return render(request, 'todo/home.html')
